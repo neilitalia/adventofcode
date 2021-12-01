@@ -1,11 +1,30 @@
 const data = require('./data.json')
 
-let larger = 0
-
-for(let i = 1; i < data.length; i++){
-  if(data[i] > data[i-1]){
-    larger += 1
+const part1 = () => {
+  let counter = 0
+  
+  for(let i = 1; i < data.length; i++){
+    if(data[i] > data[i-1]){
+      counter += 1
+    }
   }
+
+  return counter
 }
 
-console.log(larger)
+const part2 = () => {
+  let counter = 0
+
+  for(let i = 3; i < data.length; i++){
+    const current = data[i] + data[i-1] + data[i-2]
+    const previous = data[i-1] + data[i-2] + data[i-3]
+
+    if(current > previous){
+      counter += 1
+    }
+  }
+
+  return counter
+}
+
+console.log(part2())
