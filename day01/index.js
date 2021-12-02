@@ -27,4 +27,5 @@ const part2 = () => {
   return counter
 }
 
-console.log(part2())
+console.log('Part 1 Answer: ', part1())
+console.log('Part 2 Answer: ', part2())
